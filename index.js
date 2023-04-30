@@ -1,25 +1,17 @@
-import { useState, useEffect } from "react";
+import WriterEffect from "./WriterEffect";
 
-export default function Typewriter({ text, className, style, timeout = 50 }) {
-  const [displayText, setDisplayText] = useState("");
-
-  useEffect(() => {
-    let i = 0;
-    const interval = setInterval(() => {
-      if (i < text.length) {
-        setDisplayText(text.slice(0, i + 1));
-        i++;
-      } else {
-        clearInterval(interval);
-      }
-    }, timeout);
-
-    return () => clearInterval(interval);
-  }, [text]);
-
+export default function App(
+  text = "",
+  className = "",
+  style = { fontSize: "2rem", fontWeight: "bold" },
+  timeout = 50
+) {
   return (
-    <div style={style} className={className}>
-      {displayText}
-    </div>
+    <WriterEffect
+      text={text}
+      className={className}
+      style={style}
+      timeout={timeout}
+    />
   );
 }
