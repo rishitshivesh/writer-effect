@@ -1,6 +1,6 @@
 {
   "name": "writer-effect",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Writer Effect Package",
   "main": "dist/index.js",
   "scripts": {
